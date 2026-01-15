@@ -22,26 +22,26 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12 border-t border-border relative">
+    <footer className="py-8 border-t border-border relative">
       <div className="section-container">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
+        <div className="grid md:grid-cols-3 gap-4 items-center">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#home" className="font-display text-2xl font-bold inline-block mb-2">
+            <a href="#home" className="font-display text-2xl font-bold inline-block mb-1">
               <span className="gradient-text">Portfolio</span>
             </a>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               Full-Stack Developer
             </p>
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap justify-center gap-4 my-4 md:my-0">
             {footerLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.name}
               </a>
@@ -56,7 +56,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
+                className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
                 aria-label={social.label}
               >
                 <social.icon className="w-4 h-4" />
@@ -66,11 +66,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {new Date().getFullYear()} Monu Pal. Made with <Heart className="w-4 h-4 text-primary" /> 
+        <div className="mt-4 pt-4 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p className="text-xs text-muted-foreground flex items-center gap-1">
+            © {new Date().getFullYear()} Monu Pal. Made with <Heart className="w-3 h-3 text-primary" />
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[10px] text-muted-foreground">
             Built with React, TypeScript & Tailwind CSS
           </p>
         </div>
@@ -81,7 +81,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40"
+        className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40"
         aria-label="Back to top"
       >
         <ArrowUp className="w-5 h-5" />
