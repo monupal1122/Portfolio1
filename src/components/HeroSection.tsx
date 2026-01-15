@@ -120,7 +120,7 @@ const HeroSection = () => {
               {/* Profile container */}
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/30 glow-effect">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  src="/profileimage.jpeg"
                   alt="John Doe"
                   className="w-full h-full object-cover"
                 />

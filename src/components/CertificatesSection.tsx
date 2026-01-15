@@ -10,7 +10,7 @@ const certificates = [
     description: "Certificate awarded for outstanding participation and innovation in the annual tech hackathon.",
     image: "/certificate1.jpeg",
     issuer: "Tech Hackathon 2023",
-    date: "2023",
+    date: "2025",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const certificates = [
     description: "Certificate of completion for advanced web development and MERN stack training program.",
     image: "/certificate2.jpeg",
     issuer: "Online Learning Platform",
-    date: "2023",
+    date: "2024",
   },
 ];
 
