@@ -1,0 +1,1 @@
+- [x] Update ProjectsSection.tsx to replace dummy projects with new projects using provided images (groceryApp.jpeg, adminpanel.png, ai-mock.png, project1.png)
