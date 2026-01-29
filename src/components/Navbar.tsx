@@ -26,17 +26,21 @@ const Navbar = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setIsOpen(false);
+    
     const element = document.querySelector(href);
     if (element) {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      setIsOpen(false);
+      
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 300);
     }
   };
 
@@ -45,13 +49,18 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-card py-3" : "py-4 md:py-6"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "glass-card py-3" : "py-4 md:py-6"
+      }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="font-display text-2xl font-bold" onClick={(e) => handleNavClick(e, "#home")}>
+          <a 
+            href="#home" 
+            className="font-display text-2xl font-bold" 
+            onClick={(e) => handleNavClick(e, "#home")}
+          >
             <span className="gradient-text">MP</span>
           </a>
 
@@ -67,6 +76,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            
             <a
               href="/resume.pdf"
               download="Monu_Pal_Resume.pdf"
@@ -84,6 +94,7 @@ const Navbar = () => {
           <button
             className="md:hidden text-foreground"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -96,6 +107,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
               className="md:hidden mt-4"
             >
               <div className="glass-card p-4 flex flex-col gap-4">
@@ -109,6 +121,7 @@ const Navbar = () => {
                     {link.name}
                   </a>
                 ))}
+                
                 <a
                   href="/resume.pdf"
                   download="Monu_Pal_Resume.pdf"
