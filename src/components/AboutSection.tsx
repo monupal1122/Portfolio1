@@ -69,7 +69,8 @@ const AboutSection = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I'm a passionate full-stack developer with over 1 years of experience 
+                  I'm a passionate full-stack developer with over 3 years of experience 
+
                   building web applications that make a difference. Based in San Francisco, 
                   I specialize in creating elegant solutions to complex problems.
                 </p>

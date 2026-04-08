@@ -51,6 +51,33 @@ const projects = [
     githubUrl: "https://github.com/monupaji1122/project-one",
     featured: false,
   },
+
+  {
+    id: 5,
+    title: "Rangriti Website",
+    description: "A versatile MERN stack web application showcasing modern design and functionality.",
+    image: "/Rangriti.png",
+    technologies: ["MySQL", "PHP", "React"],
+    category: "Web Apps",
+    liveUrl: "https://rangriti.my-style.in/",
+    githubUrl: "https://github.com/monupaji1122/project-one",
+    featured: false,
+  },
+  {
+
+    id: 6,
+    title: "News Website",
+    description: "A versatile MERN stack web application showcasing modern design and functionality.",
+    image: "/news.png",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js"],
+    category: "Web Apps",
+    liveUrl: "https://korsimnaturals.com/",
+    githubUrl: "https://github.com/monupaji1122/project-one",
+    featured: false,
+  
+
+  }
+
 ];
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {

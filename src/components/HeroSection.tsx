@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,42 @@ const socialLinks = [
 ];
 
 const HeroSection = () => {
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  const roles = ["Full-Stack Developer", "UI/UX Designer", "MERN Stack Specialist"];
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      handleTyping();
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, typingSpeed]);
+
+  const handleTyping = () => {
+    let i = loopNum % roles.length;
+    let fullText = roles[i];
+    let updatedText = isDeleting
+      ? fullText.substring(0, displayText.length - 1)
+      : fullText.substring(0, displayText.length + 1);
+
+    setDisplayText(updatedText);
+
+    if (!isDeleting && updatedText === fullText) {
+      setTimeout(() => setIsDeleting(true), 1500);
+      setTypingSpeed(100);
+    } else if (isDeleting && updatedText === "") {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setTypingSpeed(200);
+    } else {
+      setTypingSpeed(isDeleting ? 80 : 150);
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
@@ -50,9 +87,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-6 min-h-[1.5em]"
             >
-              Full-Stack Developer
+              <span className="text-primary font-mono">{displayText}</span>
+              <span className="inline-block w-[3px] h-[1em] bg-primary ml-1 animate-pulse" />
             </motion.h2>
 
             <motion.p
@@ -121,7 +159,7 @@ const HeroSection = () => {
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/30 glow-effect">
                 <img
                   src="/profileimage.jpeg"
-                  alt="John Doe"
+                  alt="Monu Pal"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -132,7 +170,7 @@ const HeroSection = () => {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -right-4 top-10 glass-card px-4 py-2 rounded-full"
               >
-                <span className="text-sm font-medium">1+ Years Exp</span>
+                <span className="text-sm font-medium">3+ Years Exp</span>
               </motion.div>
 
               <motion.div
