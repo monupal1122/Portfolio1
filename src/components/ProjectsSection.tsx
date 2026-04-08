@@ -90,6 +90,20 @@ const projects = [
     featured: false,
 
 
+  },
+  {
+
+    id: 8,
+    title: "E-commerce",
+    description: "A versatile MERN stack web application showcasing modern design and functionality.",
+    image: "/rest.png",
+    technologies: ["MYSQL", "React", "Php"],
+    category: "Web Apps",
+    liveUrl: "https://swiftbuy.rf.gd/",
+    githubUrl: "https://github.com/monupaji1122/project-one",
+    featured: false,
+
+
   }
 
 ];
