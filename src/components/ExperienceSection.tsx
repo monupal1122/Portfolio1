@@ -69,7 +69,7 @@ const certifications = [
     year: "2025",
   },
   {
-    name: "Web Development / MERN Stack Internship",
+    name: "Web Development / MERN Stack ",
     issuer: "Hispirits Technologies",
     year: "2025",
   },

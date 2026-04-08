@@ -61,7 +61,7 @@ const Navbar = () => {
             className="font-display text-2xl font-bold" 
             onClick={(e) => handleNavClick(e, "#home")}
           >
-            <span className="gradient-text">MP</span>
+            <span className="gradient-text">Freelancer</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -78,7 +78,7 @@ const Navbar = () => {
             ))}
             
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               download="Monu_Pal_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
