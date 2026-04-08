@@ -74,7 +74,21 @@ const projects = [
     liveUrl: "https://korsimnaturals.com/",
     githubUrl: "https://github.com/monupaji1122/project-one",
     featured: false,
-  
+
+
+  },
+  {
+
+    id: 7,
+    title: "Food-delivery design",
+    description: "A versatile MERN stack web application showcasing modern design and functionality.",
+    image: "/rest.png",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js"],
+    category: "Web Apps",
+    liveUrl: "https://foreign-food-seven.vercel.app/",
+    githubUrl: "https://github.com/monupaji1122/project-one",
+    featured: false,
+
 
   }
 
@@ -100,7 +114,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Overlay Links */}
         <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <a
@@ -160,8 +174,8 @@ const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
