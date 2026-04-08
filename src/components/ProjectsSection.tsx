@@ -96,7 +96,7 @@ const projects = [
     id: 8,
     title: "E-commerce",
     description: "A versatile MERN stack web application showcasing modern design and functionality.",
-    image: "/rest.png",
+    image: "/pro.png",
     technologies: ["MYSQL", "React", "Php"],
     category: "Web Apps",
     liveUrl: "https://swiftbuy.rf.gd/",
